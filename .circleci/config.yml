@@ -5,10 +5,10 @@ jobs:
    docker:
     - image: amazon/aws-cli
    steps:
+    - checkout
     - run:
        name: Deploy command
        command: |
-            pwd
             ls -la
             printenv
             aws cloudformation deploy \
