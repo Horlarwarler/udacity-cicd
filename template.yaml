@@ -10,6 +10,7 @@ Resources:
       SecurityGroups:
         - !Ref Ec2Security
       InstanceType: "t2.micro"
+      KeyName: "udacity_key"
       
   Ec2Security:
     Type: AWS::EC2::SecurityGroup
