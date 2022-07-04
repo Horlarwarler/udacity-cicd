@@ -1,0 +1,10 @@
+---
+  - name: Deploy Server
+    user: ubuntu
+    hosts: all
+    become: true
+    become_method : sudo
+    become_user: root
+
+    roles:
+      - deploy
