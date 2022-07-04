@@ -1,19 +1,19 @@
 version: 2.1
 
 jobs:
-  create_infrastructure:
-   docker:
-    - image: amazon/aws-cli
-   steps:
-    - checkout
-    - run:
-       name: Deploy command
-       command: |
-            ls -la
-            pwd
-            aws cloudformation deploy \
-              --template-file template.yml \
-              --stack-name my-stack
+  # create_infrastructure:
+  #  docker:
+  #   - image: amazon/aws-cli
+  #  steps:
+  #   - checkout
+  #   - run:
+  #      name: Deploy command
+  #      command: |
+  #           ls -la
+  #           pwd
+  #           aws cloudformation deploy \
+  #             --template-file template.yml \
+  #             --stack-name my-stack
   configure_infrastructure:
     docker:
     - image: python:3.7-alpine3.11
@@ -28,7 +28,7 @@ jobs:
       - run:
           name: run playbook
           command:
-            ansible-playbook main.yaml -i udacity_key.pem
+            ansible-playbook main.yml -i udacity_key.pem
             
 
 
@@ -36,7 +36,7 @@ jobs:
 workflows:
   deploy_infrastructure:
     jobs:
-      - create_infrastructure
+      #- create_infrastructure
       - configure_infrastructure:
-          requires:
-            - create_infrastructure
+          #requires:
+          #  - create_infrastructure
