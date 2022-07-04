@@ -28,7 +28,7 @@ jobs:
       - run:
           name: run playbook
           command:
-            ansible-playbook main.yml -i inventory --private-key udacity_key.pem
+            ansible-playbook main.yml -i inventory 
             
 
 
