@@ -28,7 +28,7 @@ jobs:
       - run:
           name: run playbook
           command:
-            ansible-playbook main.yml -i udacity_key.pem
+            ansible-playbook main.yml -i inventory udacity_key.pem
             
 
 
@@ -37,6 +37,6 @@ workflows:
   deploy_infrastructure:
     jobs:
       #- create_infrastructure
-      - configure_infrastructure:
+      - configure_infrastructure
           #requires:
           #  - create_infrastructure
