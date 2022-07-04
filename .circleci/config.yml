@@ -16,6 +16,6 @@ jobs:
               --stack-name my-stack
 
 workflows:
-  create-workflow:
+  deploy_infrastructure:
     jobs:
       - create_infrastructure
