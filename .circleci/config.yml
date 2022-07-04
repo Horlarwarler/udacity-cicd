@@ -9,7 +9,7 @@ jobs:
        name: Deploy command
        command: |
          aws cloudformation deploy \
-         --template-file template.yaml \
+         --template-file template.yml \
          --stack-name mystack1 \
          --region us-east-1
 
